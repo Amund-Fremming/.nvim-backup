@@ -7,9 +7,10 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	-- Ikke pin til en tag: 0.1.5 kaller nvim-treesitter sitt gamle API som er
+	-- borte i main-branchen, master bruker vim.treesitter direkte.
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		-- or                            , branch = '0.1.x',
+		'nvim-telescope/telescope.nvim', branch = 'master',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
